@@ -1,0 +1,84 @@
+/* Variabel CSS */
+:root {
+    --color-bg-primary: #fff6e9; /* Background utama */
+    --color-blue: #55a2d0;       /* Warna fokus */
+    --color-box-bg: #fff;        /* Warna search bar */
+    --color-photo-border: #55a2d0; /* Warna bingkai foto */
+}
+
+/* Reset dan Font Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Susunan vertikal */
+    align-items: flex-start; /* Posisi di kiri */
+    padding: 20px; /* Jarak dari atas & kiri */
+}
+
+/* Gaya untuk Global Search Bar */
+.global-search-bar {
+    position: absolute;  /* Lepas dari flow normal */
+    top: 20px;
+    right: 20px;
+    width: 400px;  
+    background-color: var(--color-box-bg);
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    z-index: 10;
+    margin-bottom: 0; /* Tidak perlu jarak bawah */
+}
+
+.global-search-bar input {
+    width: 100%;           
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.global-search-bar input:focus {
+    border-color: var(--color-blue);
+}
+
+/* Bingkai foto kotak besar di bawah search bar */
+.photo-frame {
+    width: 300px;  /* Bisa diperbesar */
+    height: 300px;
+    border: 3px solid var(--color-photo-border);
+    border-radius: 0; 
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 100px; /* Jarak dari atas agar search bar tidak menutupi */
+
+    margin-right: auto; /* Tengah secara horizontal */
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .global-search-bar {
+        width: 90%;
+    }
+
+    .photo-frame {
+        width: 100px;
+        height: 100px;
+    }
+}
