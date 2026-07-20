@@ -1,5 +1,5 @@
 from flask import Flask, render_template, abort
-from app import app
+
 app = Flask(__name__)
 
 
@@ -7,7 +7,7 @@ def get_portfolio_data():
     return {
         "name": "Igfirlii Nuur Aziiza",
         "role": "Fullstack Web Developer & AI Enthusiast",
-        "about": "Lulusan Teknik Informatika yang berdedikasi dalam membangun solusi perangkat lunak yang efisien. Memiliki pengalaman dalam pengembangan web fullstack serta berfokus pada bahasa pemrograman python .",
+        "about": "Lulusan Teknik Informatika yang berdedikasi dalam membangun solusi perangkat lunak yang efisien. Memiliki pengalaman dalam pengembangan web fullstack serta berfokus pada bahasa pemrograman python.",
         "skills": {
             "Backend & Database": ["PHP", "MySQL", "PostgreSQL", "REST API", "Python (Flask)"],
             "Frontend": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript"],
@@ -77,5 +77,5 @@ def project_detail(pid):
     return render_template('architecture.html', data=portfolio_data, project=project)
 
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
