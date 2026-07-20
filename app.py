@@ -1,5 +1,5 @@
 from flask import Flask, render_template, abort
-
+from app import app
 app = Flask(__name__)
 
 
@@ -77,5 +77,5 @@ def project_detail(pid):
     return render_template('architecture.html', data=portfolio_data, project=project)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
